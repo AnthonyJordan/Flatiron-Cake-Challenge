@@ -2,6 +2,7 @@
 
 fetch("http://localhost:3000/cakes").then(response => response.json()).then(json => renderCakeNav(json))
 document.getElementById("review-form").addEventListener("submit", e => addReview(e))
+document.getElementById("description-form").addEventListener("submit", e => updateDescription(e))
 
 function renderCakeNav(json) {
     for (const cake of json) {
@@ -94,4 +95,24 @@ function renderReviews(json) {
 function removeReview(event) {
     event.target.remove()
 
+}
+
+function updateDescription(event) {
+    event.preventDefault()
+    const newDesc = document.getElementById("description").value
+    const cakeId = document.getElementById("cake-name").getAttribute("cake-id")
+
+    const configurationObject = {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify({
+            description: newDesc
+
+
+        })
+    };
+    fetch(`http://localhost:3000/cakes/${cakeId}`, configurationObject).then(response => response.json()).then(json => document.getElementById("cake-description").innerText = json.description)
 }

@@ -3,13 +3,14 @@
     {
       "id": 1,
       "name": "Let It Drip",
-      "description": "Quadruple chocolate cake just drip drip dripping in flavor!",
+      "description": "test",
       "image_url": "https://curriculum-content.s3.amazonaws.com/phase-1/phase-1-code-challenge-cake-off/let-it-drip-cake.jpg",
       "reviews": [
         "Yummy Yummy Yummy!",
         "Is this a real cake, or is this just fantasy?",
         "I've always hated cakes with no flavor, so this is absolutely delightful.",
-        "Best cake ever!! I love you!!!"
+        "Best cake ever!! I love you!!!",
+        "yays!"
       ]
     },
     {
